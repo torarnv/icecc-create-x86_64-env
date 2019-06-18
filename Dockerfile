@@ -25,4 +25,4 @@ WORKDIR /out
 
 CMD icecc-create-env clang 5>/tmp/filename && \
 	swift_version=$(swift -v 2>&1 |  perl -ne '/Swift version (\S+)/ && print "$1\n";') && \
-	mv $(cat /tmp/filename) swift-llvm-$swift_version-x86_64.tar.gz
+	mv -v $(cat /tmp/filename) swift-llvm-$swift_version-x86_64.tar.gz
