@@ -1,6 +1,9 @@
 ARG SWIFT_VERSION=latest
 FROM swift:$SWIFT_VERSION
 
+ARG HOST_XCODE_VERSION=latest
+ENV XCODE_VERSION=$HOST_XCODE_VERSION
+
 LABEL maintainer="Tor Arne Vestbø <torarnv@gmail.com>"
 
 ARG ICECREAM_REPO="https://github.com/icecc/icecream.git"
@@ -23,6 +26,6 @@ RUN apt-get update && apt-get -q install -y \
 VOLUME /out
 WORKDIR /out
 
-CMD icecc-create-env clang 5>/tmp/filename && \
-	swift_version=$(swift -v 2>&1 |  perl -ne '/Swift version (\S+)/ && print "$1\n";') && \
-	mv -v $(cat /tmp/filename) swift-llvm-$swift_version-x86_64.tar.gz
+COPY Makefile /tmp/Makefile
+
+CMD make -f /tmp/Makefile icecc-env
