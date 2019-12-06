@@ -1,5 +1,5 @@
 Convenience for creating Icecream toolchains to cross-compile
-on `x86_64` hosts targeting Xcode's build environment.
+on `x86_64` hosts targeting Xcode's build environment
 
 # Creating toolchain
 
