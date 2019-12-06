@@ -12,6 +12,8 @@ Then tell Icecream to use it when cross-compiling:
 
 For available tags see [docker hub](https://hub.docker.com/r/torarnv/icecc-create-x86_64-env/tags).
 
+All images built [without including any standard library headers](https://github.com/icecc/icecream/pull/473).
+
 ## Building
 
    1. Check which swift version is [bundled with the Xcode version](https://en.wikipedia.org/wiki/Xcode#Latest_versions)
