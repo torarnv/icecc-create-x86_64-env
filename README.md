@@ -19,4 +19,4 @@ The finished environment is written to the current working directory.
 
 Tell Icecream to use it when cross-compiling by running:
 
-`export ICECC_VERSION=x86_64:$(pwd)/xcode-11.2.1-x86_64.tar.gz`
+`export ICECC_VERSION=x86_64:$PWD/xcode-11.2.1-x86_64.tar.gz`
